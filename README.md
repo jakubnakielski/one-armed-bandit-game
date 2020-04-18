@@ -1,2 +1,1 @@
-1.npm run init
-2.npm run watch:all
+npm run init && npm run watch:all
