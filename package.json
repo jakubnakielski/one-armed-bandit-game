@@ -32,8 +32,8 @@
     "watch:scss2": "onchange -i -v src/styles/*.scss -- npm run prefix:css",
     "watch:js": "onchange -i -v src/js/*.js -- npm run lint:js",
     "lint:js": "eslint --fix \"src/js/*.js\"",
-    "transpile:js": "babel --watch src/js/script.js -o dist/js/script.js",
-    "obfuscate:js": "npx javascript-obfuscator dist/js/script.js --rename-globals true",
+    "transpile:js": "babel --watch src/js/**/*.js -d dist/js",
+    "obfuscate:js": "npx javascript-obfuscator dist/js/**/*.js --rename-globals true",
     "start": "browser-sync -s -w -b chrome",
     "watch:all": "concurrently \"npm start\" \"npm run watch:scss1\" \"npm run watch:scss2\" \"npm run watch:js\" \"npm run transpile:js\""
   },
