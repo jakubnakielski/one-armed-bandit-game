@@ -1,6 +1,15 @@
 import { Draw } from './Draw.js';
 
-console.log(Draw);
+const playBtn = document.querySelector('.play__btn');
+const moneyInput = document.querySelector('.play__input');
 
-const drawBtn = document.querySelector('.play__btn');
-console.log(drawBtn);
+const fundsSpan = document.querySelector('.results__funds > span');
+const gamesNumberSpan = document.querySelector('.results__funds > span');
+const winGamesSpan = document.querySelector('.results__funds > span');
+const lostGamesSpan = document.querySelector('.results__funds > span');
+
+
+const el = new Draw('red', 'orange', 'yellow');
+console.log(el.drawColors());
+
+

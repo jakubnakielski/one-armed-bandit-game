@@ -14,6 +14,3 @@ export class Draw {
 		return randomColors;
 	}
 }
-
-const el = new Draw('red', 'orange', 'yellow');
-console.log(el.drawColors());
