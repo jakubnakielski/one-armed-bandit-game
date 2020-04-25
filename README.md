@@ -1,2 +1,1 @@
-Simply type in console:
-npm run init && npm run watch:all
+Live demo: https://jakubnakielski.github.io/one-armed-bandit-game/
