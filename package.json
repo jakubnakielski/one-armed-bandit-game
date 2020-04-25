@@ -18,7 +18,9 @@
     "javascript-obfuscator": "^0.27.4",
     "node-sass": "^4.13.1",
     "npm-run-all": "^4.1.5",
-    "onchange": "^6.1.0"
+    "onchange": "^6.1.0",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11"
   },
   "scripts": {
     "init": "npm-run-all init:*",
@@ -35,7 +37,9 @@
     "transpile:js": "babel --watch src/js/**/*.js -d dist/js",
     "obfuscate:js": "npx javascript-obfuscator dist/js/**/*.js --rename-globals true",
     "start": "browser-sync -s -w -b chrome",
-    "watch:all": "concurrently \"npm start\" \"npm run watch:scss1\" \"npm run watch:scss2\" \"npm run watch:js\" \"npm run transpile:js\""
+    "watch:all": "concurrently \"npm start\" \"npm run watch:scss1\" \"npm run watch:scss2\" \"npm run watch:js\"",
+    "webpack:prod": "webpack --watch src/js/main.js -o dist/js/main.js --mode=production",
+    "webpack:dev": "webpack --watch src/js/main.js -o dist/js/main.js --mode=development"
   },
   "repository": {
     "type": "git",
