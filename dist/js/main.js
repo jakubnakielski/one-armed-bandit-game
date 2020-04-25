@@ -98,6 +98,18 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 
 /***/ }),
 
+/***/ "./src/js/Result.js":
+/*!**************************!*\
+  !*** ./src/js/Result.js ***!
+  \**************************/
+/*! exports provided: Result */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"Result\", function() { return Result; });\nclass Result {\r\n\tisWon() {\r\n        \r\n\t}\r\n}\n\n//# sourceURL=webpack:///./src/js/Result.js?");
+
+/***/ }),
+
 /***/ "./src/js/main.js":
 /*!************************!*\
   !*** ./src/js/main.js ***!
@@ -106,7 +118,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _Draw_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Draw.js */ \"./src/js/Draw.js\");\n\r\n\r\nconst playBtn = document.querySelector('.play__btn');\r\nconst moneyInput = document.querySelector('.play__input');\r\n\r\nconst fundsSpan = document.querySelector('.results__funds > span');\r\nconst gamesNumberSpan = document.querySelector('.results__funds > span');\r\nconst winGamesSpan = document.querySelector('.results__funds > span');\r\nconst lostGamesSpan = document.querySelector('.results__funds > span');\r\n\r\n\r\nconst el = new _Draw_js__WEBPACK_IMPORTED_MODULE_0__[\"Draw\"]('red', 'orange', 'yellow');\r\nconsole.log(el.drawColors());\r\n\r\n\r\n\n\n//# sourceURL=webpack:///./src/js/main.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _Draw_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Draw.js */ \"./src/js/Draw.js\");\n/* harmony import */ var _Result_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Result.js */ \"./src/js/Result.js\");\n\r\n\r\n\r\nconst playBtn = document.querySelector('.play__btn');\r\nconst moneyInput = document.querySelector('.play__input');\r\n\r\nconst fundsSpan = document.querySelector('.results__funds > span');\r\nconst gamesNumberSpan = document.querySelector('.results__funds > span');\r\nconst winGamesSpan = document.querySelector('.results__funds > span');\r\nconst lostGamesSpan = document.querySelector('.results__funds > span');\r\n\r\nconst draw = new _Draw_js__WEBPACK_IMPORTED_MODULE_0__[\"Draw\"]('red', 'orange', 'yellow');\r\nconsole.log(draw.drawColors());\r\n\r\n\r\n\n\n//# sourceURL=webpack:///./src/js/main.js?");
 
 /***/ })
 
