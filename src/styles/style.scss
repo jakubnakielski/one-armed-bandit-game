@@ -1,0 +1,83 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: "Open Sans", sans-serif;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+header > h1 {
+  text-align: center;
+}
+.boxesContainer {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  &__box {
+    height: 300px;
+    width: 250px;
+    background: grey;
+    margin: 30px;
+    box-shadow: 10px 10px 76px -5px rgba(0, 0, 0, 0.34);
+
+    &--first {
+      background: #c70039;
+    }
+
+    &--second {
+      background: #ff5733;
+    }
+
+    &--third {
+      background: #ffc300;
+    }
+  }
+}
+
+.play {
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 50px 0 15px 0;
+
+  &__input {
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 100px;
+    max-width: 400px;
+    min-width: 250px;
+    border: 2px solid grey;
+    margin: 0 15px;
+    font-size: 1.2em;
+  }
+
+  &__btn {
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 100px;
+    max-width: 300px;
+    min-width: 150px;
+    border: none;
+    background: grey;
+    color: white;
+    font-size: 1.3em;
+    transition: 0.15s;
+
+    &:hover {
+      cursor: pointer;
+      background: #900c3e;
+    }
+  }
+}
+
+.results {
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 80px;
+}

@@ -4,10 +4,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Game</title>
+    <link rel="stylesheet" href="dist/styles/style.css">
 </head>
 
 <body>
+    <header>
+        <h1>One-armed bandit</h1>
+    </header>
+    <section class="boxesContainer">
+        <div class="boxesContainer__box boxesContainer__box--first"></div>
+        <div class="boxesContainer__box boxesContainer__box--second"></div>
+        <div class="boxesContainer__box boxesContainer__box--third"></div>
+    </section>
+
+    <section class="play">
+        <input class="play__input" type="text" placeholder=" Enter money">
+        <button class="play__btn">Draw</button>
+    </section>
+    <section class="results">
+        <p class="results__funds">Your funds: <span>123</span>$</p>
+
+        <p class="results__draws">Games overall: <span>11</span></p>
+        <p class="results__wins">Wins: <span>3</span></p>
+        <p class="results__lost">Lost: <span>2</span></p>
+    </section>
 </body>
 
 </html>
