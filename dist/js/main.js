@@ -98,6 +98,18 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 
 /***/ }),
 
+/***/ "./src/js/Game.js":
+/*!************************!*\
+  !*** ./src/js/Game.js ***!
+  \************************/
+/*! exports provided: Game */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"Game\", function() { return Game; });\nclass Game {\r\n\tconstructor() {\r\n\t\tthis.playBtn = document.querySelector('.play__btn');\r\n\t\tthis.moneyInput = document.querySelector('.play__input');\r\n\t\tthis.fundsSpan = document.querySelector('.results__funds > span');\r\n\t\tthis.gamesNumberSpan = document.querySelector('.results__draws > span');\r\n\t\tthis.winGamesSpan = document.querySelector('.results__wins > span');\r\n\t\tthis.lostGamesSpan = document.querySelector('.results__lost > span');\r\n    }\r\n    \r\n}\n\n//# sourceURL=webpack:///./src/js/Game.js?");
+
+/***/ }),
+
 /***/ "./src/js/Wallet.js":
 /*!**************************!*\
   !*** ./src/js/Wallet.js ***!
@@ -106,7 +118,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"Wallet\", function() { return Wallet; });\nclass Wallet {\r\n\tconstructor(funds) {\r\n\t\tthis._funds = funds;\r\n\t}\r\n\r\n\tgetFundsValue() {\r\n\t\treturn this._funds;\r\n\t}\r\n\r\n\tchangeFunds(type, value) {\r\n\t\tif (type == '-') {\r\n\t\t\tthis._funds -= value;\r\n\t\t}\r\n\t\telse if (type == '+') {\r\n\t\t\tthis._funds += value;\r\n\t\t}\r\n\t\telse {\r\n\t\t\tthrow new Error(`Incorrect type. Type must be '-' or '+' `);\r\n\t\t}\r\n\t}\r\n\r\n\tcanPlay() {\r\n\t\tif (this._funds <= 0) {\r\n\t\t\treturn false;\r\n\t\t}\r\n\t\treturn true;\r\n\t}\r\n\r\n}\r\n\n\n//# sourceURL=webpack:///./src/js/Wallet.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"Wallet\", function() { return Wallet; });\nclass Wallet {\r\n\tconstructor(funds) {\r\n\t\tthis._funds = funds;\r\n\t}\r\n\r\n\tgetFundsValue() {\r\n\t\treturn this._funds;\r\n\t}\r\n\r\n\tchangeFunds(type, value) {\r\n\t\tif (type == '-') {\r\n\t\t\tthis._funds -= value;\r\n\t\t}\r\n\t\telse if (type == '+') {\r\n\t\t\tthis._funds += value;\r\n\t\t}\r\n\t\telse {\r\n\t\t\tthrow new Error('Incorrect type. Type must be \\'-\\' or \\'+\\' ');\r\n\t\t}\r\n\t}\r\n\r\n\tcanPlay() {\r\n\t\tif (this._funds <= 0) {\r\n\t\t\treturn false;\r\n\t\t}\r\n\t\treturn true;\r\n\t}\r\n\r\n}\r\n\n\n//# sourceURL=webpack:///./src/js/Wallet.js?");
 
 /***/ }),
 
@@ -118,7 +130,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _Draw__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Draw */ \"./src/js/Draw.js\");\n/* harmony import */ var _Wallet__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Wallet */ \"./src/js/Wallet.js\");\n\r\n\r\nconst wallet = new _Wallet__WEBPACK_IMPORTED_MODULE_1__[\"Wallet\"](100);\r\n\r\nwallet.changeFunds('-', 10)\r\nconsole.log(wallet.canPlay());\r\n\r\nconst playBtn = document.querySelector('.play__btn');\r\nconst moneyInput = document.querySelector('.play__input');\r\n\r\nconst fundsSpan = document.querySelector('.results__funds > span');\r\nconst gamesNumberSpan = document.querySelector('.results__funds > span');\r\nconst winGamesSpan = document.querySelector('.results__funds > span');\r\nconst lostGamesSpan = document.querySelector('.results__funds > span');\r\n\r\n// const draw = new Draw('red', 'orange', 'yellow');\r\n// console.log(draw.drawColors());\r\n\r\n\r\n\n\n//# sourceURL=webpack:///./src/js/main.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _Draw__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Draw */ \"./src/js/Draw.js\");\n/* harmony import */ var _Wallet__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Wallet */ \"./src/js/Wallet.js\");\n/* harmony import */ var _Game__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Game */ \"./src/js/Game.js\");\n\r\n\r\n\r\n\r\nconst wallet = new _Wallet__WEBPACK_IMPORTED_MODULE_1__[\"Wallet\"](100);\r\nwallet.changeFunds('-', 10);\r\nconsole.log(wallet.canPlay());\r\n\r\nconst draw = new _Draw__WEBPACK_IMPORTED_MODULE_0__[\"Draw\"]('red', 'orange', 'yellow');\r\nconsole.log(draw.drawColors());\r\n\r\nconst game = new _Game__WEBPACK_IMPORTED_MODULE_2__[\"Game\"]();\r\nconsole.log(game)\r\n\n\n//# sourceURL=webpack:///./src/js/main.js?");
 
 /***/ })
 

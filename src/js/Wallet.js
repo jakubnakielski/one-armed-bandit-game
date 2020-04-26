@@ -15,7 +15,7 @@ export class Wallet {
 			this._funds += value;
 		}
 		else {
-			throw new Error(`Incorrect type. Type must be '-' or '+' `);
+			throw new Error('Incorrect type. Type must be \'-\' or \'+\' ');
 		}
 	}
 
