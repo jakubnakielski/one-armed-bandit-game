@@ -33,7 +33,7 @@
     "watch:scss1": "onchange -i -v src/styles/*.scss -- npm run build:scss",
     "watch:scss2": "onchange -i -v src/styles/*.scss -- npm run prefix:css",
     "watch:js": "onchange -i -v src/js/*.js -- npm run lint:js",
-    "lint:js": "eslint --fix \"src/js/*.js\"",
+    "lint:js": "eslint \"src/js/*.js\"",
     "transpile:js": "babel --watch src/js/**/*.js -d dist/js",
     "obfuscate:js": "npx javascript-obfuscator dist/js/**/*.js --rename-globals true",
     "start": "browser-sync -s -w -b chrome",
