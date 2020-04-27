@@ -43,7 +43,7 @@ export class Game {
 			alert('You don\'t have enough funds!');
 			return;
 		}
-		
+
 		const drawnColors = this.getRandomColors();
 		const results = new Results(drawnColors);
 
@@ -66,9 +66,5 @@ export class Game {
 
 		return randomColors;
 	}
-
-	// checkIfWin() {
-	// 	const randomColor this.getRandomColors()
-	// }
 }
 
