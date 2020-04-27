@@ -6,7 +6,7 @@ export class Draw {
 	drawColors() {
 		const colorsNumber = this._colors.length;
 		const randomColors = [];
-		
+
 		for (let i = 0; i < colorsNumber; i++) {
 			const index = Math.floor(Math.random() * colorsNumber);
 			randomColors.push(this._colors[index]);

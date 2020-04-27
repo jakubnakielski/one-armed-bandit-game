@@ -10,11 +10,9 @@ export class Wallet {
 	changeFunds(type, value) {
 		if (type == '-') {
 			this._funds -= value;
-		}
-		else if (type == '+') {
+		} else if (type == '+') {
 			this._funds += value;
-		}
-		else {
+		} else {
 			throw new Error('Incorrect type. Type must be \'-\' or \'+\' ');
 		}
 	}
@@ -25,5 +23,4 @@ export class Wallet {
 		}
 		return true;
 	}
-
 }

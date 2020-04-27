@@ -14,7 +14,7 @@
     "concurrently": "^5.1.0",
     "eslint": "^6.8.0",
     "eslint-config-airbnb-base": "^14.1.0",
-    "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-import": "^2.20.2",
     "javascript-obfuscator": "^0.27.4",
     "node-sass": "^4.13.1",
     "npm-run-all": "^4.1.5",
@@ -33,13 +33,13 @@
     "watch:scss1": "onchange -i -v src/styles/*.scss -- npm run build:scss",
     "watch:scss2": "onchange -i -v src/styles/*.scss -- npm run prefix:css",
     "watch:js": "onchange -i -v src/js/*.js -- npm run lint:js",
-    "lint:js": "eslint \"src/js/*.js\"",
+    "lint:js": "eslint --fix \"src/js/*.js\"",
     "transpile:js": "babel --watch src/js/**/*.js -d dist/js",
     "obfuscate:js": "npx javascript-obfuscator dist/js/**/*.js --rename-globals true",
     "start": "browser-sync -s -w -b chrome",
     "watch:all": "concurrently \"npm start\" \"npm run watch:scss1\" \"npm run watch:scss2\" \"npm run watch:js\"",
-    "webpack:prod": "webpack --watch src/js/main.js -o dist/js/main.js --mode=production",
-    "webpack:dev": "webpack --watch src/js/main.js -o dist/js/main.js --mode=development"
+    "webpack:prod": "webpack --watch --hot true src/js/main.js -o dist/js/main.js --mode=production",
+    "webpack:dev": "webpack --watch --hot true src/js/main.js -o dist/js/main.js --mode=development"
   },
   "repository": {
     "type": "git",

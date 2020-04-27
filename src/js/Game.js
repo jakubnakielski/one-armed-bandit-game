@@ -6,6 +6,5 @@ export class Game {
 		this.gamesNumberSpan = document.querySelector('.results__draws > span');
 		this.winGamesSpan = document.querySelector('.results__wins > span');
 		this.lostGamesSpan = document.querySelector('.results__lost > span');
-    }
-    
+	}
 }
