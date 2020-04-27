@@ -106,7 +106,19 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"Game\", function() { return Game; });\nclass Game {\r\n\tconstructor() {\r\n\t\tthis.playBtn = document.querySelector('.play__btn');\r\n\t\tthis.moneyInput = document.querySelector('.play__input');\r\n\t\tthis.fundsSpan = document.querySelector('.results__funds > span');\r\n\t\tthis.gamesNumberSpan = document.querySelector('.results__draws > span');\r\n\t\tthis.winGamesSpan = document.querySelector('.results__wins > span');\r\n\t\tthis.lostGamesSpan = document.querySelector('.results__lost > span');\r\n\t}\r\n}\r\n\n\n//# sourceURL=webpack:///./src/js/Game.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"Game\", function() { return Game; });\n/* harmony import */ var _UIAnimations__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./UIAnimations */ \"./src/js/UIAnimations.js\");\n\r\n\r\nclass Game {\r\n\tconstructor() {\r\n\t\tthis._playBtn = document.querySelector('.play__btn');\r\n\t\tthis._moneyInput = document.querySelector('.play__input');\r\n\t\tthis._boxes = [...document.querySelectorAll('.boxesContainer__box')];\r\n\t\tthis._fundsSpan = document.querySelector('.results__funds > span');\r\n\t\tthis._gamesNumberSpan = document.querySelector('.results__draws > span');\r\n\t\tthis._winGamesSpan = document.querySelector('.results__wins > span');\r\n\t\tthis._lostGamesSpan = document.querySelector('.results__lost > span');\r\n\t\tthis._colors = ['#c70039', '#ff5733', '#ffc300'];\r\n\r\n\t\tthis._playBtn.addEventListener('click', () => {\r\n\t\t\tthis.startGame(this._boxes, this._colors);\r\n\t\t});\r\n\t}\r\n\r\n\tstartGame(_boxes, _colors) {\r\n\t\tconst animation = new _UIAnimations__WEBPACK_IMPORTED_MODULE_0__[\"UIAnimations\"](_colors);\r\n\t\tanimation.animate(_boxes);\r\n\t\r\n\t}\r\n}\r\n\n\n//# sourceURL=webpack:///./src/js/Game.js?");
+
+/***/ }),
+
+/***/ "./src/js/Stats.js":
+/*!*************************!*\
+  !*** ./src/js/Stats.js ***!
+  \*************************/
+/*! exports provided: Stats */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"Stats\", function() { return Stats; });\nclass Stats {\r\n    constructor() {\r\n        this._gamesOverall = 0;\r\n        this._wins = 0;\r\n        this._lost = 0;\r\n    }\r\n\r\n    changeStats(type) {\r\n        this.type++;\r\n    }\r\n}\n\n//# sourceURL=webpack:///./src/js/Stats.js?");
 
 /***/ }),
 
@@ -118,7 +130,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"UIAnimations\", function() { return UIAnimations; });\nclass UIAnimations {\r\n    constructor() {\r\n        this.boxes = [...document.querySelectorAll('.boxesContainer__box')];\r\n        this.colors = ['#c70039', '#ff5733', '#ffc300'];\r\n    }\r\n    changeColor(box, colorIndex) {\r\n        box.style.backgroundColor = this.colors[colorIndex];\r\n    }\r\n    animate() {\r\n\r\n        this.boxes.forEach((box, index) => {\r\n            setInterval(() => {\r\n                this.changeColor(box, index++);\r\n                if (index >= this.colors.length) index = 0;\r\n            }, 2000);\r\n        });\r\n\r\n    }\r\n}\r\n\n\n//# sourceURL=webpack:///./src/js/UIAnimations.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"UIAnimations\", function() { return UIAnimations; });\nclass UIAnimations {\r\n    constructor(colors) {\r\n        this._colors = colors;\r\n    }\r\n    changeColor(box, colorIndex) {\r\n        box.style.backgroundColor = this._colors[colorIndex];\r\n    }\r\n\r\n    animate(boxes) {\r\n        boxes.forEach((box, index) => {\r\n            setInterval(() => {\r\n                this.changeColor(box, index++);\r\n                if (index >= this._colors.length) index = 0;\r\n            }, 500);\r\n        });\r\n\r\n    }\r\n}\r\n\r\n\r\n\n\n//# sourceURL=webpack:///./src/js/UIAnimations.js?");
 
 /***/ }),
 
@@ -142,7 +154,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _Wallet__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Wallet */ \"./src/js/Wallet.js\");\n/* harmony import */ var _Draw__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Draw */ \"./src/js/Draw.js\");\n/* harmony import */ var _Game__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Game */ \"./src/js/Game.js\");\n/* harmony import */ var _UIAnimations__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./UIAnimations */ \"./src/js/UIAnimations.js\");\n\r\n\r\n\r\n\r\n\r\n// const wallet = new Wallet(100);\r\n// wallet.changeFunds('-', 10);\r\n// console.log(wallet.canPlay());\r\n\r\n// const draw = new Draw('red', 'orange', 'yellow');\r\n// console.log(draw.drawColors());\r\n\r\n// const game = new Game();\r\n// console.log(game)\r\n\r\n// const animation = new UIAnimations();\r\n// animation.animate();\n\n//# sourceURL=webpack:///./src/js/main.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _Wallet__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Wallet */ \"./src/js/Wallet.js\");\n/* harmony import */ var _Draw__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Draw */ \"./src/js/Draw.js\");\n/* harmony import */ var _Game__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Game */ \"./src/js/Game.js\");\n/* harmony import */ var _UIAnimations__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./UIAnimations */ \"./src/js/UIAnimations.js\");\n/* harmony import */ var _Stats__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Stats */ \"./src/js/Stats.js\");\n\r\n\r\n\r\n\r\n\r\n\r\n// const wallet = new Wallet(100);\r\n// wallet.changeFunds('-', 10);\r\n// console.log(wallet.canPlay());\r\n\r\n// const draw = new Draw('red', 'orange', 'yellow');\r\n// console.log(draw.drawColors());\r\n\r\nconst game = new _Game__WEBPACK_IMPORTED_MODULE_2__[\"Game\"]();\r\n// game.startGame();\r\n// const animation = new UIAnimations();\r\n// animation.animate();\r\n\r\n// const stats = new Stats();\r\n// stats.changeStats();\r\n\n\n//# sourceURL=webpack:///./src/js/main.js?");
 
 /***/ })
 

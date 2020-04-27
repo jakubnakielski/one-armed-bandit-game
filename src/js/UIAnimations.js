@@ -1,19 +1,20 @@
 export class UIAnimations {
-    constructor() {
-        this.boxes = [...document.querySelectorAll('.boxesContainer__box')];
-        this.colors = ['#c70039', '#ff5733', '#ffc300'];
+    constructor(colors) {
+        this._colors = colors;
     }
     changeColor(box, colorIndex) {
-        box.style.backgroundColor = this.colors[colorIndex];
+        box.style.backgroundColor = this._colors[colorIndex];
     }
-    animate() {
 
-        this.boxes.forEach((box, index) => {
+    animate(boxes) {
+        boxes.forEach((box, index) => {
             setInterval(() => {
                 this.changeColor(box, index++);
-                if (index >= this.colors.length) index = 0;
-            }, 2000);
+                if (index >= this._colors.length) index = 0;
+            }, 500);
         });
 
     }
 }
+
+
