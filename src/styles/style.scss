@@ -23,7 +23,9 @@ header > h1 {
     background: grey;
     margin: 30px;
     box-shadow: 10px 10px 76px -5px rgba(0, 0, 0, 0.34);
-
+    transition: .2s;
+    border-radius: 15px;
+    
     &--first {
       background: #c70039;
     }

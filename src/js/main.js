@@ -3,9 +3,6 @@ import { Draw } from './Draw';
 import { Game } from './Game';
 import { UIAnimations } from './UIAnimations';
 
-const animation = new UIAnimations();
-animation.animate();
-
 // const wallet = new Wallet(100);
 // wallet.changeFunds('-', 10);
 // console.log(wallet.canPlay());
@@ -15,3 +12,6 @@ animation.animate();
 
 // const game = new Game();
 // console.log(game)
+
+// const animation = new UIAnimations();
+// animation.animate();
