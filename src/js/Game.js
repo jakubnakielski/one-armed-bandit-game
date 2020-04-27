@@ -27,8 +27,23 @@ export class Game {
 	startGame(_boxes, _colors) {
 		if (!_boxes || !_colors) throw new Error('startGame() requires 2 arguments!');
 
-		const bid = this._moneyInput.value;
+		const bid = parseFloat(this._moneyInput.value).toFixed(2);
 
+		if (bid <= 0) {
+			alert('Enter correct bid!');
+			return;
+		}
+
+		if (!this._wallet.canPlay()) {
+			alert('You are broke!\nRefresh for new game ...');
+			return;
+		}
+
+		if (!this._wallet.hasEnoughFunds(bid)) {
+			alert('You don\'t have enough funds!');
+			return;
+		}
+		
 		const drawnColors = this.getRandomColors();
 		const results = new Results(drawnColors);
 

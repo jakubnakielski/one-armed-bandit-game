@@ -10,6 +10,7 @@ export class Wallet {
 
 	changeFunds(type, value) {
 		value = parseFloat(value);
+
 		if (isNaN(value) || typeof (value) !== 'number') {
 			alert('You must enter your bid!');
 			return;
@@ -17,9 +18,11 @@ export class Wallet {
 
 		if (type == '-') {
 			this._funds -= value;
+			this._funds = Math.ceil(this._funds * 100) / 100;
 		}
 		else if (type == '+') {
 			this._funds += value;
+			this._funds = Math.ceil(this._funds * 100) / 100;
 		}
 		else {
 			throw new Error('Incorrect type. Type must be \'-\' or \'+\' ');
@@ -31,5 +34,9 @@ export class Wallet {
 			return false;
 		}
 		return true;
+	}
+
+	hasEnoughFunds(bid) {
+		return this._funds >= bid;
 	}
 }
