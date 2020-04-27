@@ -130,7 +130,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"UIAnimations\", function() { return UIAnimations; });\nclass UIAnimations {\r\n    constructor(colors) {\r\n        this._colors = colors;\r\n    }\r\n    changeColor(box, colorIndex) {\r\n        box.style.backgroundColor = this._colors[colorIndex];\r\n    }\r\n\r\n    animate(boxes) {\r\n        boxes.forEach((box, index) => {\r\n            setInterval(() => {\r\n                this.changeColor(box, index++);\r\n                if (index >= this._colors.length) index = 0;\r\n            }, 500);\r\n        });\r\n\r\n    }\r\n}\r\n\r\n\r\n\n\n//# sourceURL=webpack:///./src/js/UIAnimations.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"UIAnimations\", function() { return UIAnimations; });\nclass UIAnimations {\r\n    constructor(colors) {\r\n        this._colors = colors;\r\n    }\r\n    changeColor(box, index) {\r\n        box.style.order = index;\r\n    }\r\n\r\n    animate(boxes) {\r\n\r\n        boxes.forEach((box, index) => {\r\n            setInterval(() => {\r\n                this.changeColor(box, index++);\r\n                if (index >= this._colors.length) index = 0;\r\n            }, 1000);\r\n        });\r\n\r\n    }\r\n}\r\n\r\n\r\n\n\n//# sourceURL=webpack:///./src/js/UIAnimations.js?");
 
 /***/ }),
 
