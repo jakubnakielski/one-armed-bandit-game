@@ -26,13 +26,17 @@ export class Game {
 
 	startGame(_boxes, _colors) {
 		if (!_boxes || !_colors) throw new Error('startGame() requires 2 arguments!');
-		
+
 		const bid = this._moneyInput.value;
 
 		const drawnColors = this.getRandomColors();
 		const results = new Results(drawnColors);
-		const isWon = results.isWon();
-		
+
+		results.isWon() ?
+			this._wallet.changeFunds('+', bid) :
+			this._wallet.changeFunds('-', bid);
+
+		console.log(this._wallet);
 		this._animation.stopAnimation();
 		this._animation.setColors(this._boxes, drawnColors);
 	}
@@ -41,7 +45,7 @@ export class Game {
 		return this._colors;
 	}
 
-	getRandomColors() { 
+	getRandomColors() {
 		const draw = new Draw(...this._colors);
 		const randomColors = draw.drawColors();
 
