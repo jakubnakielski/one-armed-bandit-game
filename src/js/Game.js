@@ -14,15 +14,9 @@ export class Game {
 		this._winGamesSpan = document.querySelector('.results__wins > span');
 		this._lostGamesSpan = document.querySelector('.results__lost > span');
 		this._colors = ['#c70039', '#ff5733', '#ffc300'];
-		this._isRunning = false;
 		this._wallet = new Wallet({ funds: 200 });
 
-		this._playBtn.addEventListener('click', (e) => {
-			// if (this._isRunning)
-			// 	return;
-			// else
-			// 	this._isRunning = true;
-
+		this._playBtn.addEventListener('click', () => {
 			this.startGame(this._boxes, this._colors);
 		});
 
@@ -42,7 +36,6 @@ export class Game {
 		this._animation.stopAnimation();
 		this._animation.setColors(this._boxes, drawnColors);
 	}
-
 
 	getColors() {
 		return this._colors;
