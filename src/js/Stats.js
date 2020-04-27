@@ -1,5 +1,5 @@
 export class Stats {
-    constructor() {
+    constructor() {  
         this._gamesOverall = 0;
         this._wins = 0;
         this._lost = 0;
@@ -8,4 +8,5 @@ export class Stats {
     changeStats(type) {
         this.type++;
     }
+
 }

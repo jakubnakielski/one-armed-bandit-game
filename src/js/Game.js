@@ -1,5 +1,8 @@
 import { UIAnimations } from './UIAnimations';
 import { Draw } from './Draw';
+import { Wallet } from './Wallet';
+import { Stats } from './Stats';
+import { Results } from './Results';
 
 export class Game {
 	constructor() {
@@ -12,24 +15,40 @@ export class Game {
 		this._lostGamesSpan = document.querySelector('.results__lost > span');
 		this._colors = ['#c70039', '#ff5733', '#ffc300'];
 		this._isRunning = false;
+		this._wallet = new Wallet({ funds: 200 });
 
 		this._playBtn.addEventListener('click', (e) => {
-			if (this._isRunning)
-				return;
-			else
-				this._isRunning = true;
+			// if (this._isRunning)
+			// 	return;
+			// else
+			// 	this._isRunning = true;
 
 			this.startGame(this._boxes, this._colors);
 		});
+
+		this._animation = new UIAnimations(this._colors);
+		this._animation.startAnimation(this._boxes);
 	}
 
 	startGame(_boxes, _colors) {
 		if (!_boxes || !_colors) throw new Error('startGame() requires 2 arguments!');
+		
+		const bid = this._moneyInput.value;
 
-		const animation = new UIAnimations(_colors);
-		animation.animate(_boxes);
+		const drawnColors = this.getRandomColors();
+		const results = new Results(drawnColors);
+		const isWon = results.isWon();
+		
+		this._animation.stopAnimation();
+		this._animation.setColors(this._boxes, drawnColors);
 	}
-	getRandomColors() {
+
+
+	getColors() {
+		return this._colors;
+	}
+
+	getRandomColors() { 
 		const draw = new Draw(...this._colors);
 		const randomColors = draw.drawColors();
 

@@ -1,5 +1,5 @@
 export class Wallet {
-	constructor(funds) {
+	constructor({funds}) {
 		this._funds = funds;
 	}
 
