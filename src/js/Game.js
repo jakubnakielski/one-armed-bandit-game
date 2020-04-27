@@ -1,4 +1,5 @@
 import { UIAnimations } from './UIAnimations';
+import { Draw } from './Draw';
 
 export class Game {
 	constructor() {
@@ -23,8 +24,15 @@ export class Game {
 	}
 
 	startGame(_boxes, _colors) {
+		if(!_boxes || !_colors ) throw new Error('startGame() requires 2 arguments!');
+
 		const animation = new UIAnimations(_colors);
 		animation.animate(_boxes);
+	}
+	getRandomColors() {
+		const draw = new Draw(...this._colors);
+		const randomColors = draw.drawColors();
 
+		return randomColors;
 	}
 }
