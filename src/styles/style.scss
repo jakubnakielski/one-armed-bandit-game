@@ -1,5 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
-@import 'mixins';
+@import url("https://fonts.googleapis.com/css2?family=Monoton&display=swap");
+@import "mixins";
+
 $first-box-color: #c70039;
 $second-box-color: #ff5733;
 $third-box-color: #ffc300;
@@ -13,7 +15,13 @@ body {
   margin: 0 auto;
 }
 header > h1 {
+  margin: 20px 0 40px;
   text-align: center;
+  font-size: 5em;
+  font-weight: 400;
+  color: #571845;
+  text-shadow: 7px 5px 16px rgba(#571845, 0.4);
+  font-family: "Monoton", sans-serif;
 }
 .boxesContainer {
   width: 80%;
@@ -93,4 +101,5 @@ header > h1 {
   justify-content: space-between;
   flex-wrap: wrap;
   margin: 80px auto;
+  font-size: 1.2em;
 }

@@ -24,7 +24,7 @@ export class Game {
 	}
 
 	startGame(_boxes, _colors) {
-		if(!_boxes || !_colors ) throw new Error('startGame() requires 2 arguments!');
+		if (!_boxes || !_colors) throw new Error('startGame() requires 2 arguments!');
 
 		const animation = new UIAnimations(_colors);
 		animation.animate(_boxes);
@@ -36,3 +36,4 @@ export class Game {
 		return randomColors;
 	}
 }
+
