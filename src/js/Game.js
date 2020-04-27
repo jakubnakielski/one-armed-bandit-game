@@ -35,5 +35,9 @@ export class Game {
 
 		return randomColors;
 	}
+
+	// checkIfWin() {
+	// 	const randomColor this.getRandomColors()
+	// }
 }
 

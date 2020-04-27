@@ -11,8 +11,10 @@ import { Results } from './Results';
 
 
 const game = new Game();
-console.log(game.getRandomColors());
 
+const drawnColors = game.getRandomColors();
+const results = new Results(drawnColors);
+console.log(results.isWon());
 
 // const stats = new Stats();
 // stats.changeStats();
