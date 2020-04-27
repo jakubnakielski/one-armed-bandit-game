@@ -7,13 +7,12 @@ export class UIAnimations {
 
         this._intervalIndexes = [];
         boxes.forEach((box, index) => {
-            console.log();
-            
+
             this._intervalIndexes[index] = setInterval(() => {
                 box.style.order = index++;
                 if (index >= this._colors.length) index = 0;
-            }, 500);
-
+            }, 1000);
+            
         });
     }
     stopAnimation() {

@@ -142,7 +142,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"UIAnimations\", function() { return UIAnimations; });\nclass UIAnimations {\r\n    constructor(colors) {\r\n        this._colors = colors;\r\n    }\r\n\r\n    startAnimation(boxes) {\r\n\r\n        this._intervalIndexes = [];\r\n        boxes.forEach((box, index) => {\r\n            console.log();\r\n            \r\n            this._intervalIndexes[index] = setInterval(() => {\r\n                box.style.order = index++;\r\n                if (index >= this._colors.length) index = 0;\r\n            }, 500);\r\n\r\n        });\r\n    }\r\n    stopAnimation() {\r\n        for(const index of this._intervalIndexes) {\r\n            clearInterval(index);\r\n        }\r\n    }\r\n\r\n    setColors(boxes, colors) {\r\n        boxes.forEach((box, index) => box.style.background = colors[index]);\r\n    }\r\n}\r\n\r\n\r\n\n\n//# sourceURL=webpack:///./src/js/UIAnimations.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"UIAnimations\", function() { return UIAnimations; });\nclass UIAnimations {\r\n    constructor(colors) {\r\n        this._colors = colors;\r\n    }\r\n\r\n    startAnimation(boxes) {\r\n\r\n        this._intervalIndexes = [];\r\n        boxes.forEach((box, index) => {\r\n\r\n            this._intervalIndexes[index] = setInterval(() => {\r\n                box.style.order = index++;\r\n                if (index >= this._colors.length) index = 0;\r\n            }, 1000);\r\n            \r\n        });\r\n    }\r\n    stopAnimation() {\r\n        for(const index of this._intervalIndexes) {\r\n            clearInterval(index);\r\n        }\r\n    }\r\n\r\n    setColors(boxes, colors) {\r\n        boxes.forEach((box, index) => box.style.background = colors[index]);\r\n    }\r\n}\r\n\r\n\r\n\n\n//# sourceURL=webpack:///./src/js/UIAnimations.js?");
 
 /***/ }),
 
@@ -166,7 +166,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _Game__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Game */ \"./src/js/Game.js\");\n/* harmony import */ var _Results__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Results */ \"./src/js/Results.js\");\n\r\n\r\n\r\nconst game = new _Game__WEBPACK_IMPORTED_MODULE_0__[\"Game\"]();\r\n\r\n// console.log(game.getColors());\r\n\r\n// const drawnColors = game.getRandomColors();\r\n// const results = new Results(drawnColors);\r\n// console.log(results.isWon());\r\n\r\n// const stats = new Stats();\r\n// stats.changeStats();\r\n\r\n\r\n\n\n//# sourceURL=webpack:///./src/js/main.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _Game__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Game */ \"./src/js/Game.js\");\n\r\n\r\nconst game = new _Game__WEBPACK_IMPORTED_MODULE_0__[\"Game\"]();\r\n\r\n\r\n\r\n\n\n//# sourceURL=webpack:///./src/js/main.js?");
 
 /***/ })
 
