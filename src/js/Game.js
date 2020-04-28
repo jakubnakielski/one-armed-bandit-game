@@ -3,8 +3,8 @@ import { Draw } from './Draw';
 import { Wallet } from './Wallet';
 import { Stats } from './Stats';
 import { Results } from './Results';
-import { getComputedColors } from './getComputedColors';
-console.log(getComputedColors());
+import { getBoxStyles } from './getBoxStyles';
+
 export class Game {
 	constructor() {
 		this._playBtn = document.querySelector('.play__btn');
@@ -14,13 +14,14 @@ export class Game {
 		this._gamesOverallSpan = document.querySelector('.results__draws > span');
 		this._winGamesSpan = document.querySelector('.results__wins > span');
 		this._lostGamesSpan = document.querySelector('.results__lost > span');
-		this._colors = ['#c70039', '#ff5733', '#ffc300'];
+		this._colors = getBoxStyles()[0];
+		this._boxShadows = getBoxStyles()[1];
 		this._wallet = new Wallet({ funds: 200 });
 		this._stats = new Stats();
 		this._animation = new UIAnimations(this._colors);
 		// this._animation.startAnimation(this._boxes);
 
-		this.resetStats();
+		// this.resetStats();
 
 		this._playBtn.addEventListener('click', () => {
 			this.startGame(this._boxes, this._colors);
@@ -56,12 +57,15 @@ export class Game {
 			this._wallet.changeFunds('+', bid) :
 			this._wallet.changeFunds('-', bid);
 
-		console.log(this._wallet.getFundsValue());
 		// this._animation.stopAnimation();
 		this._animation.setColors(this._boxes, drawnColors);
 
 		this._stats.updateStats({ isWon });
 		this.renderStats();
+	}
+
+	getColors() {
+		return this._colors;
 	}
 
 	getRandomColors() {
