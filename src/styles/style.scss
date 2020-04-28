@@ -3,9 +3,34 @@
 @import "mixins";
 @import "reset";
 
-$first-box-color: #c70039;
-$second-box-color: #ff5733;
-$third-box-color: #ffc300;
+$first-base-color: #c70039;
+$second-base-color: #ff5733;
+$third-base-color: #ffc300;
+
+$first-box-gradient: linear-gradient(
+  to left bottom,
+  #f52a64,
+  #ea2159,
+  #de184e,
+  #d30d43,
+  #c70039
+);
+$second-box-gradient: linear-gradient(
+  to left bottom,
+  #ff614f,
+  #ff5e48,
+  #ff5c42,
+  #ff593b,
+  #ff5733
+);
+$third-box-gradient: linear-gradient(
+  to left bottom,
+  #ffce2e,
+  #ffcb26,
+  #ffc91d,
+  #ffc612,
+  #ffc300
+);
 
 * {
   box-sizing: border-box;
@@ -41,20 +66,19 @@ header > h1 {
 
     &--first {
       order: 0;
-      background: $first-box-color;
-      @include box-shadow($first-box-color);
+      background: $first-box-gradient;
+      @include box-shadow($first-base-color);
     }
 
     &--second {
       order: 1;
-      background: $second-box-color;
-      @include box-shadow($second-box-color);
+      background: $second-box-gradient;
+      @include box-shadow($second-base-color);
     }
-
     &--third {
       order: 2;
-      background: $third-box-color;
-      @include box-shadow($third-box-color);
+      background: $third-box-gradient;
+      @include box-shadow($third-base-color);
     }
   }
 }
@@ -65,7 +89,7 @@ header > h1 {
   justify-content: center;
   flex-wrap: wrap;
   margin: 100px 0 15px 0;
-  
+
   &__input {
     flex-grow: 1;
     flex-shrink: 1;
