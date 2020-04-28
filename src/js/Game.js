@@ -21,7 +21,7 @@ export class Game {
 		this._animation = new UIAnimations(this._colors);
 		// this._animation.startAnimation(this._boxes);
 
-		// this.resetStats();
+		this.resetStats();
 
 		this._playBtn.addEventListener('click', () => {
 			this.startGame(this._boxes, this._colors);
