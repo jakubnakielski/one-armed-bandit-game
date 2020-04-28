@@ -3,7 +3,8 @@ import { Draw } from './Draw';
 import { Wallet } from './Wallet';
 import { Stats } from './Stats';
 import { Results } from './Results';
-
+import { getComputedColors } from './getComputedColors';
+console.log(getComputedColors());
 export class Game {
 	constructor() {
 		this._playBtn = document.querySelector('.play__btn');
@@ -61,10 +62,6 @@ export class Game {
 
 		this._stats.updateStats({ isWon });
 		this.renderStats();
-	}
-
-	getColors() {
-		return this._colors;
 	}
 
 	getRandomColors() {

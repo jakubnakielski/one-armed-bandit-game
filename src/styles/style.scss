@@ -1,37 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Monoton&display=swap");
-@import "mixins";
 @import "reset";
-:root {
-  --box-0-base-color: #c70039;
-  --box-1-base-color: #ff5733;
-  --box-2-base-color: #ffc300;
-
-  --first-box-gradient: linear-gradient(
-    to left bottom,
-    #f52a64,
-    #ea2159,
-    #de184e,
-    #d30d43,
-    #c70039
-  );
-  --second-box-gradient: linear-gradient(
-    to left bottom,
-    #ff614f,
-    #ff5e48,
-    #ff5c42,
-    #ff593b,
-    #ff512b
-  );
-  --third-box-gradient: linear-gradient(
-    to left bottom,
-    #ffce2e,
-    #ffcb26,
-    #ffc91d,
-    #ffc612,
-    #ffc300
-  );
-}
+@import "variables";
+@import "mixins";
 
 * {
   box-sizing: border-box;
@@ -66,19 +37,16 @@ header > h1 {
 
     &--first {
       order: 0;
-      background: var(--box-0-base-color);
-      @include box-shadow(var(--first-base-color));
+      @include box-theme($gradient1, $baseColor1);
     }
 
     &--second {
       order: 1;
-      background: var(--box-1-base-color);
-      @include box-shadow(var(--second-base-color));
+      @include box-theme($gradient2, $baseColor2);
     }
     &--third {
       order: 2;
-      background: var(--box-2-base-color);
-      @include box-shadow(var(--third-base-color));
+      @include box-theme($gradient3, $baseColor3);
     }
   }
 }

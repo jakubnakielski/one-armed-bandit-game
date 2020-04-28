@@ -22,9 +22,10 @@ export class UIAnimations {
     }
 
     setColors(boxes, colors) {
-
+        console.log(boxes, colors);        
         boxes.forEach((box, index) => {
-            const cssVariable = `--box-${index}-base-color`;
+
+            const cssVariable = `--box-${index}-gradient`;
             document.documentElement.style.setProperty(cssVariable, colors[index]);
         });
         
