@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Monoton&display=swap");
 @import "mixins";
+@import "reset";
 
 $first-box-color: #c70039;
 $second-box-color: #ff5733;
@@ -64,8 +65,7 @@ header > h1 {
   justify-content: center;
   flex-wrap: wrap;
   margin: 100px 0 15px 0;
-
-
+  
   &__input {
     flex-grow: 1;
     flex-shrink: 1;
