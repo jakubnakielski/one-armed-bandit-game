@@ -1,7 +1,6 @@
 export class Wallet {
 	constructor({ funds }) {
 		this._funds = parseFloat(funds);
-		console.log(this._funds);
 	}
 
 	getFundsValue() {

@@ -10,18 +10,21 @@ export class Game {
 		this._moneyInput = document.querySelector('.play__input');
 		this._boxes = [...document.querySelectorAll('.boxesContainer__box')];
 		this._fundsSpan = document.querySelector('.results__funds > span');
-		this._gamesNumberSpan = document.querySelector('.results__draws > span');
+		this._gamesOverallSpan = document.querySelector('.results__draws > span');
 		this._winGamesSpan = document.querySelector('.results__wins > span');
 		this._lostGamesSpan = document.querySelector('.results__lost > span');
 		this._colors = ['#c70039', '#ff5733', '#ffc300'];
 		this._wallet = new Wallet({ funds: 200 });
+		this._stats = new Stats();
+		this._animation = new UIAnimations(this._colors);
+		this._animation.startAnimation(this._boxes);
+
+		this.resetStats();
 
 		this._playBtn.addEventListener('click', () => {
 			this.startGame(this._boxes, this._colors);
 		});
 
-		this._animation = new UIAnimations(this._colors);
-		this._animation.startAnimation(this._boxes);
 	}
 
 	startGame(_boxes, _colors) {
@@ -46,14 +49,18 @@ export class Game {
 
 		const drawnColors = this.getRandomColors();
 		const results = new Results(drawnColors);
+		const isWon = results.isWon();
 
-		results.isWon() ?
+		isWon ?
 			this._wallet.changeFunds('+', bid) :
 			this._wallet.changeFunds('-', bid);
 
-		console.log(this._wallet);
+		console.log(this._wallet.getFundsValue());
 		this._animation.stopAnimation();
 		this._animation.setColors(this._boxes, drawnColors);
+
+		this._stats.updateStats({ isWon });
+		this.renderStats();
 	}
 
 	getColors() {
@@ -65,6 +72,22 @@ export class Game {
 		const randomColors = draw.drawColors();
 
 		return randomColors;
+	}
+
+	renderStats() {
+		const { gamesOverall, wins, lost } = this._stats.getStats();
+
+		this._fundsSpan.textContent = this._wallet.getFundsValue();
+		this._gamesOverallSpan.textContent = gamesOverall;
+		this._winGamesSpan.textContent = wins;
+		this._lostGamesSpan.textContent = lost;
+	}
+
+	resetStats() {
+		this._fundsSpan.textContent = this._wallet.getFundsValue();
+		this._gamesOverallSpan.textContent = 0;
+		this._winGamesSpan.textContent = 0;
+		this._lostGamesSpan.textContent = 0;
 	}
 }
 
