@@ -2,35 +2,36 @@
 @import url("https://fonts.googleapis.com/css2?family=Monoton&display=swap");
 @import "mixins";
 @import "reset";
+:root {
+  --box-0-base-color: #c70039;
+  --box-1-base-color: #ff5733;
+  --box-2-base-color: #ffc300;
 
-$first-base-color: #c70039;
-$second-base-color: #ff5733;
-$third-base-color: #ffc300;
-
-$first-box-gradient: linear-gradient(
-  to left bottom,
-  #f52a64,
-  #ea2159,
-  #de184e,
-  #d30d43,
-  #c70039
-);
-$second-box-gradient: linear-gradient(
-  to left bottom,
-  #ff614f,
-  #ff5e48,
-  #ff5c42,
-  #ff593b,
-  #ff512b
-);
-$third-box-gradient: linear-gradient(
-  to left bottom,
-  #ffce2e,
-  #ffcb26,
-  #ffc91d,
-  #ffc612,
-  #ffc300
-);
+  --first-box-gradient: linear-gradient(
+    to left bottom,
+    #f52a64,
+    #ea2159,
+    #de184e,
+    #d30d43,
+    #c70039
+  );
+  --second-box-gradient: linear-gradient(
+    to left bottom,
+    #ff614f,
+    #ff5e48,
+    #ff5c42,
+    #ff593b,
+    #ff512b
+  );
+  --third-box-gradient: linear-gradient(
+    to left bottom,
+    #ffce2e,
+    #ffcb26,
+    #ffc91d,
+    #ffc612,
+    #ffc300
+  );
+}
 
 * {
   box-sizing: border-box;
@@ -59,26 +60,25 @@ header > h1 {
   &__box {
     height: 300px;
     width: 250px;
-    background: grey;
     margin: 30px;
     transition: 0.2s;
     border-radius: 15px;
 
     &--first {
       order: 0;
-      background: $first-box-gradient;
-      @include box-shadow($first-base-color);
+      background: var(--box-0-base-color);
+      @include box-shadow(var(--first-base-color));
     }
 
     &--second {
       order: 1;
-      background: $second-box-gradient;
-      @include box-shadow($second-base-color);
+      background: var(--box-1-base-color);
+      @include box-shadow(var(--second-base-color));
     }
     &--third {
       order: 2;
-      background: $third-box-gradient;
-      @include box-shadow($third-base-color);
+      background: var(--box-2-base-color);
+      @include box-shadow(var(--third-base-color));
     }
   }
 }
