@@ -18,8 +18,10 @@ export class Game {
 		this._boxShadows = getBoxStyles()[1];
 		this._wallet = new Wallet({ funds: 200 });
 		this._stats = new Stats();
+		
+		const animationSpeed = 750;	
 		this._animation = new UIAnimations(this._colors);
-		// this._animation.startAnimation(this._boxes);
+		this._animation.startAnimation(this._boxes, animationSpeed);
 
 		this.resetStats();
 
@@ -57,7 +59,7 @@ export class Game {
 			this._wallet.changeFunds('+', bid) :
 			this._wallet.changeFunds('-', bid);
 
-		// this._animation.stopAnimation();
+		this._animation.stopAnimation();
 		this._animation.setColors(this._boxes, drawnColors);
 
 		this._stats.updateStats({ isWon });

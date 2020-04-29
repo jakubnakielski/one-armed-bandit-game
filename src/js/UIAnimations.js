@@ -3,7 +3,7 @@ export class UIAnimations {
         this._colors = colors;
     }
 
-    startAnimation(boxes) {
+    startAnimation(boxes, animationSpeed) {
 
         this._intervalIndexes = [];
         boxes.forEach((box, index) => {
@@ -11,7 +11,7 @@ export class UIAnimations {
             this._intervalIndexes[index] = setInterval(() => {
                 box.style.order = index++;
                 if (index >= this._colors.length) index = 0;
-            }, 1000);
+            }, animationSpeed);
 
         });
     }
@@ -21,12 +21,13 @@ export class UIAnimations {
         }
     }
 
-    setColors(boxes, colors) {
-        console.log(boxes, colors);        
+    setColors(boxes, drawnColors) {
+
         boxes.forEach((box, index) => {
-           
+            box.style.background = drawnColors[index];
+            box.style.boxShadow = '0 0 0 0 ';
         });
-        
+
     }
 }
 
