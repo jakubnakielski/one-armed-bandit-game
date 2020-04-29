@@ -1,18 +1,16 @@
 export class Results {
-    constructor(drawnColors) {
-        if (!drawnColors) throw new Error('Results constructor requires \'drawnColors\'argument');
-        this._drawnColors = drawnColors;
-    }
 
-    hasDuplicates(arr) {
+    static hasDuplicates(arr) {
         const set = new Set(arr);
         return set.size !== arr.length;
     }
 
-    isWon() {
-        const firstColor = this._drawnColors[0];
-        const areTheSame = this._drawnColors.every((color) => color === firstColor);
-        const hasDuplicates = this.hasDuplicates(this._drawnColors);
+    static isWon(drawnColors) {
+        if (!drawnColors) throw new Error('Results constructor requires \'drawnColors\'argument');
+
+        const firstColor = drawnColors[0];
+        const areTheSame = drawnColors.every((color) => color === firstColor);
+        const hasDuplicates = this.hasDuplicates(drawnColors);
 
         return areTheSame || !hasDuplicates;
     }

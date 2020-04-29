@@ -5,7 +5,7 @@ export class Stats {
         this._lost = 0;
     }
 
-    updateStats({ isWon }) {
+     updateStats(isWon) {
         isWon ?
             this._wins++ :
             this._lost++;
@@ -13,7 +13,7 @@ export class Stats {
         this._gamesOverall++;
     }
 
-    getStats() {
+     getStats() {
         const stats = {
             gamesOverall: this._gamesOverall,
             wins: this._wins,
