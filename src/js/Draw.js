@@ -2,7 +2,7 @@ export class Draw {
 	constructor(color1, color2, color3, ...rest) {
 		this._colors = [color1, color2, color3, ...rest];
 	}
-
+ 
 	drawColors() {
 		const colorsNumber = this._colors.length;
 		const randomColors = [];

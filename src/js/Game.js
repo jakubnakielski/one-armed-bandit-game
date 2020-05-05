@@ -23,7 +23,7 @@ export class Game {
 		this._animation = new UIAnimations(this._colors);
 		this._animation.startAnimation(this._boxes, animationSpeed);
 
-		this.resetStats();
+		this.resetStats(); 
 
 		this._playBtn.addEventListener('click', () => {
 			this.startGame(this._boxes, this._colors);
@@ -37,7 +37,7 @@ export class Game {
 		const bid = parseFloat(this._moneyInput.value).toFixed(2);
 
 		if (bid <= 0) {
-			alert('Enter correct bid!');
+			alert('Enter correct bid!'); 
 			return;
 		}
 
