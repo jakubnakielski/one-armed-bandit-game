@@ -16,7 +16,7 @@
     "eslint-config-airbnb-base": "^14.1.0",
     "eslint-plugin-import": "^2.20.2",
     "javascript-obfuscator": "^0.27.4",
-    "node-sass": "^4.13.1",
+    "node-sass": "^7.0.0",
     "npm-run-all": "^4.1.5",
     "onchange": "^6.1.0",
     "webpack": "^4.43.0",
